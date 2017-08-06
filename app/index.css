@@ -18,3 +18,11 @@ tr:nth-child(even) {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
+
+body {
+	font-family: Monospace;
+}
+
+.styled-text {
+	font-family: monospace;
+}

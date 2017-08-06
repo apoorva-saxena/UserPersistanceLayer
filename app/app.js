@@ -6,7 +6,6 @@
             method: 'GET',
             url: 'http://localhost:8080/api/users'
         }).then(function successCallback(response) {
-            console.log(response)
             $scope.users = response.data
         }, function errorCallback(response) {
             console.log(response)
@@ -24,18 +23,39 @@
                     data: {
                         email: email,
                         forename: forename,
-                        surname: surname 
+                        surname: surname
                     }
                 }
 
                 console.log(req)
 
                 $http(req).then(function(req) {
-                	console.log(req)
+                    console.log(req)
                     $scope.users.unshift(req.config.data)
                 })
             }
 
+        }
+
+        $scope.deleteUser = function(user) {
+            console.log(user)
+            $http({
+                    method: 'DELETE',
+                    url: '/api/users/' + user._id,
+                    data: {
+                        id: user._id
+                    },
+                    headers: {
+                        'Content-type': 'application/json;charset=utf-8'
+                    }
+                })
+                .then(function(response) {
+                	console.log("=========success")
+                    console.log(response.data);
+                }, function(rejection) {
+                	console.log("=========rejection")
+                    console.log(rejection.data);
+                });
         }
 
     })
