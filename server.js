@@ -42,7 +42,7 @@ server.post('/api/users', function(req, res) {
     })
 })
 
-server.delete('/api/users/:id', function(req, res) {
+server.delete('/api/deleteusers/:id', function(req, res) {
     User.remove({ _id: req.body.id }, function(err, res) {
         if (err) {
             console.log("Error: ", err)

@@ -41,7 +41,7 @@
             console.log(user)
             $http({
                     method: 'DELETE',
-                    url: '/api/users/' + user._id,
+                    url: '/api/deleteusers/' + user._id,
                     data: {
                         id: user._id
                     },
@@ -50,10 +50,8 @@
                     }
                 })
                 .then(function(response) {
-                	console.log("=========success")
-                    console.log(response.data);
+                	console.log(response.data)
                 }, function(rejection) {
-                	console.log("=========rejection")
                     console.log(rejection.data);
                 });
         }
