@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>User Persistance Layer</title>
+    <link rel="stylesheet" type="text/css" href="index.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+</head>
+
+<body ng-app="UserApp">
+    <h1> User Data </h1>
+    <div ng-controller="UserController">
+        <div>
+            <div>
+                <form ng-submit="addUser(email, forename, surname)">
+                    Email: <input type="text" ng-model="email" />
+                    Forename: <input type="text" ng-model="forename" />
+                    Surname: <input type="text" ng-model="surname" />
+                    <input type="submit" id="submit" value="Add New User" />
+                </form>
+                <div class="between-space"></div>
+                <table>
+                    <tr>
+                        <!-- <th>ID</th> -->
+                        <th>EMAIL</th>
+                        <th>FORENAME</th>
+                        <th>SURNAME</th>
+                        <!-- <th>CREATED</th> -->
+                        <th>Delete</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr ng-repeat="user in users">
+                        <!-- <td>{{user._id}}</td> -->
+                        <td>{{user.email}}</td>
+                        <td>{{user.forename}}</td>
+                        <td>{{user.surname}}</td>
+                        <!-- <td>{{user.date}}</td> -->
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>
