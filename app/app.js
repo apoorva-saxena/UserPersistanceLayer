@@ -41,7 +41,7 @@
             console.log(user)
             $http({
                     method: 'DELETE',
-                    url: '/api/deleteusers/' + user._id,
+                    url: '/api/deleteuser/' + user._id,
                     data: {
                         id: user._id
                     },
@@ -50,11 +50,44 @@
                     }
                 })
                 .then(function(response) {
-                	console.log(response.data)
+                    console.log(response.data)
                 }, function(rejection) {
                     console.log(rejection.data);
                 });
         }
+
+        $scope.showModal = false;
+
+        $scope.open = function() {
+            $scope.showModal = true;
+        };
+
+        $scope.ok = function(emailid, new_forename, new_surname, id) {
+            $scope.showModal = false;
+            console.log(emailid, new_forename, new_surname, id)
+            const new_user = {
+            	emailid,
+            	id,
+            	new_surname,
+            	new_forename
+            }
+
+            $http.put("/api/update_user/"+id ,new_user).then(function (res) {
+            	console.log(res)
+            }, function (err) {
+            	console.log(err)
+            })
+        	
+
+
+        };
+
+
+
+        // $scope.updateUser = function (user) {
+        // 	// body...
+        // 	$http.patch(baseUrl + '/users/' + currentUserEmail,data, config).success(success).error(error)
+        // }
 
     })
 })();

@@ -15,10 +15,11 @@
         <div>
             <div>
                 <form ng-submit="addUser(email, forename, surname)">
-                    Email: <input type="text" ng-model="email" placeholder="Email" />
-                    Forename: <input type="text" ng-model="forename" placeholder="Forename" />
-                    Surname: <input type="text" ng-model="surname" placeholder="Surname" />
-                    <input type="submit" id="submit" value="Add New User" class="styled-text"/>
+                    Email:
+                    <input type="text" ng-model="email" placeholder="Email" /> Forename:
+                    <input type="text" ng-model="forename" placeholder="Forename" /> Surname:
+                    <input type="text" ng-model="surname" placeholder="Surname" />
+                    <input type="submit" id="submit" value="Add New User" class="styled-text" />
                 </form>
                 <div class="between-space"></div>
                 <table>
@@ -33,15 +34,26 @@
                     </tr>
                     <tr ng-repeat="user in users | orderBy:'-date'">
                         <!-- <td>{{user._id}}</td> -->
-                        <td ><span class="styled-text">{{user.email}}</span></td>
-                        <td ><span class="styled-text">{{user.forename}}</span></td>
-                        <td ><span class="styled-text">{{user.surname}}</span></td>
+                        <td><span class="styled-text">{{user.email}}</span></td>
+                        <td><span class="styled-text">{{user.forename}}</span></td>
+                        <td><span class="styled-text">{{user.surname}}</span></td>
                         <!-- <td>{{user.date}}</td> -->
                         <td>
                             <button class="styled-text" ng-click="deleteUser(user)">Delete</button>
                         </td>
                         <td>
-                            <button class="styled-text">Edit</button>
+                            <button class="styled-text" ng-click="open()" ng-show="!showModal">Edit</button>
+                            <div modal="showModal" ng-show="showModal" close="cancel()">
+                                <span class="modal-header">
+                                    <h4>Edit User Data</h4>
+                                    <span class="styled-text">Email</span>: <input type="text" ng-model="emailid" placeholder="Email" class="styled-text"/>
+                                    <span class="styled-text">Forename</span>: <input type="text" ng-model="new_forename" placeholder="Forename" class="styled-text"/>
+                                    <span class="styled-text">Surname</span>: <input type="text" ng-model="new_surname" placeholder="Surname" class="styled-text"/>
+                                </span>
+                                <span class="modal-footer">
+                                    <button class="btn btn-success" ng-click="ok(emailid, new_forename, new_surname, user._id)" class="styled-text">Okay</button>
+                                </span>
+                            </div>
                         </td>
                     </tr>
                 </table>

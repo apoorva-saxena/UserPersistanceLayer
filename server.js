@@ -42,7 +42,7 @@ server.post('/api/users', function(req, res) {
     })
 })
 
-server.delete('/api/deleteusers/:id', function(req, res) {
+server.delete('/api/deleteuser/:id', function(req, res) {
     User.remove({ _id: req.body.id }, function(err, res) {
         if (err) {
             console.log("Error: ", err)
@@ -50,6 +50,21 @@ server.delete('/api/deleteusers/:id', function(req, res) {
         console.log(req.body.id + " deleted from database")
     })
 })
+
+server.put('/api/update_user/:id', function(req, res) {
+    console.log(req.body)
+    User.replaceOne({ _id: req.body.id }, {
+        email: req.body.emailid,
+        forename: req.body.new_forename,
+        surname: req.body.new_surname
+    }, function(err, doc) {
+        if (err) {
+            console.log("Error: ", err)
+        }
+        console.log(doc)
+    })
+})
+
 
 server.listen(8080);
 console.log("Server listening to port 8080")
