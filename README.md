@@ -28,11 +28,11 @@ $ ./node_modules/.bin/protractor
 
 
 ## Other info
-- How your API is to be consumed (a custom interface or something like Google Chrome's "Postman" or Swagger).
+- __How your API is to be consumed (a custom interface or something like Google Chrome's "Postman" or Swagger).__
 I have added the User interface for the database which allows easy consumption of the API. The same request can be sent via postman. 
-- Use of an industry standard data exchange format.
+- __Use of an industry standard data exchange format.__
 Have used JSON
-- Sanitization checks of inputs.
+- __Sanitization checks of inputs.__
 This is done via the mongodb driver mongoose + ORM mapping.
-- Implementation of test coverage.
+- __Implementation of test coverage.__
 Test section above.
