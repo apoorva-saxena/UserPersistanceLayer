@@ -21,10 +21,10 @@ $ open http://localhost:8080
 $ ./node_modules/.bin/protractor
 
 ```
+<img width="608" alt="screen shot 2017-08-09 at 13 30 49" src="https://user-images.githubusercontent.com/13749603/29121998-b5af66e8-7d08-11e7-920a-e2ddb232e198.png">
 
 ## Screenshots
 
-![Main screen](http://i.imgur.com/lsCu67Y.png)
-![Main screen](http://i.imgur.com/EJScA18.png)
-![Main screen](http://i.imgur.com/gko5u2g.png)
+<img width="1680" alt="screen shot 2017-08-09 at 13 41 52" src="https://user-images.githubusercontent.com/13749603/29122003-b7d6bdc2-7d08-11e7-9adc-9e5fecffb233.png">
+<img width="1680" alt="screen shot 2017-08-09 at 13 42 10" src="https://user-images.githubusercontent.com/13749603/29122012-ba3e7ef6-7d08-11e7-9272-e6057f873d84.png">
 
