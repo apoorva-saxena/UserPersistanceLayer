@@ -8,7 +8,6 @@ describe('editing a user', function () {
 	})
 
 	it('should be able to edit a user', function () {
-		element(by.id('mickey@d.comedit')).isPresent()
-
+		element(by.id('mickey@d.comdelete')).isPresent()
 	})
 })
