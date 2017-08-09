@@ -26,3 +26,13 @@ $ ./node_modules/.bin/protractor
 <img width="1680" alt="screen shot 2017-08-09 at 13 41 52" src="https://user-images.githubusercontent.com/13749603/29122003-b7d6bdc2-7d08-11e7-9adc-9e5fecffb233.png">
 <img width="1680" alt="screen shot 2017-08-09 at 13 42 10" src="https://user-images.githubusercontent.com/13749603/29122012-ba3e7ef6-7d08-11e7-9272-e6057f873d84.png">
 
+
+## Other info
+- How your API is to be consumed (a custom interface or something like Google Chrome's "Postman" or Swagger).
+I have added the User interface for the database which allows easy consumption of the API. The same request can be sent via postman. 
+- Use of an industry standard data exchange format.
+Have used JSON
+- Sanitization checks of inputs.
+This is done via the mongodb driver mongoose + ORM mapping.
+- Implementation of test coverage.
+Test section above.
