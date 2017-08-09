@@ -4,6 +4,7 @@ const server = express()
 const bodyParser = require('body-parser');
 const User = require('./models/user')
 const _ = require('lodash')
+const port =  process.env.PORT || 8080
 
 server.use(bodyParser.urlencoded())
 server.use(bodyParser.json())
@@ -66,7 +67,9 @@ server.put('/api/update_user/:id', function(req, res) {
 })
 
 
-server.listen(8080);
+server.listen(port, function () {
+    console.log("Server ",  process.pid, 'listening on ', port )
+});
 console.log("Server listening to port 8080")
 
 exports = module.exports = server
