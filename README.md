@@ -1,6 +1,6 @@
 # UserPersistanceLayer
 
-an API to manage user persistence layer.
+an API to manage users.
 
 ## Set Up
 
