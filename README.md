@@ -1,8 +1,6 @@
 # UserPersistanceLayer
 
-an API to manage a user persistence layer.
-: 
-
+an API to manage user persistence layer.
 
 ## Set Up
 
@@ -11,7 +9,7 @@ $ brew install mongodb
 $ clone this repo locally
 $ npm install
 $ mongod in another tab
-$ npm start
+$ node server.js
 $ open http://localhost:8080
 ```
 

@@ -4,8 +4,8 @@
 
         $http({
             method: 'GET',
-            // url: 'http://localhost:8080/api/users'
-            url: 'https://userpersistancelayer.herokuapp.com/api/users',
+            url: 'http://localhost:8080/api/users'
+            // url: 'https://userpersistancelayer.herokuapp.com/api/users',
         }).then(function successCallback(response) {
             $scope.users = response.data
         }, function errorCallback(response) {
@@ -17,8 +17,8 @@
             if (email && forename && surname) {
                 const req = {
                     method: 'POST',
-                    // url: "http://localhost:8080/api/users",
-                    url:"https://userpersistancelayer.herokuapp.com/api/users",
+                    url: "http://localhost:8080/api/users",
+                    // url:"https://userpersistancelayer.herokuapp.com/api/users",
                     headers: {
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                     },
